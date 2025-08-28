@@ -28,7 +28,13 @@ const AsciiArtRenderer = ({ art, linesPerSecond = 10, onComplete }) => {
     return () => clearInterval(timer);
   }, [art, linesPerSecond]);
 
-  return <pre className="h-52">{displayedLines.join("\n")}</pre>;
+  return (
+    <div className="w-full overflow-x-auto">
+      <pre className=" text-[0.55rem]  md:text-sm h-24 md:h-36 leading-tight">
+        {displayedLines.join("\n")}
+      </pre>
+    </div>
+  );
 };
 
 export default AsciiArtRenderer;
